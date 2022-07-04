@@ -22,7 +22,18 @@ void insertAtTheFront (Node**head, int newValue){
 }
 
 void insertAtTheEnd(Node**head, int newValue){
-
+    Node* newNode = new Node();
+    newNode->value = newValue;
+    newNode->next = NULL;
+    if(*head == NULL){
+        *head = newNode;
+        return;
+    }
+    Node* last = *head;
+    while(last->next != NULL){
+        last = last->next;
+    }
+    last->next = newNode;
 }
 
 
@@ -36,7 +47,7 @@ int main (){
     second->next = third;
     third->value = 3;    
     third->next = NULL;
-    insertAtTheFront(&head, -1);
+    insertAtTheEnd(&head,4);
     printList(head);
     return 0;
 }
