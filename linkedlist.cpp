@@ -35,7 +35,15 @@ void insertAtTheEnd(Node**head, int newValue){
     }
     last->next = newNode;
 }
-
+void insertAfter(Node* previous, int newValue){
+    if(previous == NULL){
+        cout << "Previous element cant be null" << endl;
+    }
+    Node* newNode = new Node();
+    newNode->value = newValue;
+    newNode->next = previous->next;
+    previous->next = newNode;
+}
 
 int main (){
     Node* head = new Node();
@@ -47,7 +55,7 @@ int main (){
     second->next = third;
     third->value = 3;    
     third->next = NULL;
-    insertAtTheEnd(&head,4);
+    insertAfter(head,-1);
     printList(head);
     return 0;
 }
