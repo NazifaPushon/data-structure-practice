@@ -11,7 +11,7 @@ int main(){
     myDictionary.insert(pair<string,string>("apple","der apfel"));
 
     myDictionary["strawberry"] = "Die Erdberra";
-    
+
     for(auto pair : myDictionary){
         cout << pair.first << " - " <<pair.second << endl;
     }
