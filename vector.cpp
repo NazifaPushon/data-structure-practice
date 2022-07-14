@@ -11,9 +11,6 @@ int main (){
     }
 
 
-    for(int number:numbers){
-        cout << number << endl;
-    }
 
     for(auto it = numbers.begin(); it!=numbers.end(); it++){
        // cout << it << endl;
