@@ -35,6 +35,19 @@ void post_order(Node *node){
     cout << node->data << endl;
 }
 
+
+void in_order(Node *node){
+    if(node->left != NULL){
+        in_order(node->left);
+    }
+
+    cout << node->data << endl;
+
+    if(node->right !=NULL){
+        post_order(node->right);
+    }
+}
+
 int main (){
 
     Node* root = createNode(1);
@@ -48,5 +61,8 @@ int main (){
     cout << endl;
     cout << endl;
     post_order(root);
+    cout << endl;
+    cout << endl;
+    in_order(root);
     return 0;
 }
