@@ -24,6 +24,16 @@ void pre_order(Node *node){
     }
 }
 
+void post_order(Node *node){
+    if(node->left != NULL){
+        post_order(node->left);
+    }
+
+    if(node->right !=NULL){
+        post_order(node->right);
+    }
+    cout << node->data << endl;
+}
 
 int main (){
 
@@ -33,6 +43,10 @@ int main (){
     root->left->left = createNode(4);
     root->left->right = createNode(5);
 
+    
     pre_order(root);
+    cout << endl;
+    cout << endl;
+    post_order(root);
     return 0;
 }
